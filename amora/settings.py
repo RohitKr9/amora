@@ -27,12 +27,14 @@ SECRET_KEY = 'django-insecure-h7d!cp8tr!%lzlaobhmf4#p)#1kax5iddy^&j$f_i_$!08v!@c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'heart',
     'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -69,7 +71,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'amora.wsgi.application'
+#WSGI_APPLICATION = 'amora.wsgi.application'
+ASGI_APPLICATION = 'amora.asgi.application'
 
 
 # Database

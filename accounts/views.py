@@ -10,6 +10,7 @@ User = get_user_model()
 def loginView(request):
     if request.method == 'POST':
         data = request.POST
+        print(data)
         email = data["email"]
         password = data["password"]
         print(email, password)
@@ -24,7 +25,6 @@ def loginView(request):
     return render(request, 'login.html')
         
 def signupView(request):
-
     if request.method == 'POST':
         data = request.POST
         first_name = data["first_name"]
@@ -36,3 +36,4 @@ def signupView(request):
         return HttpResponseRedirect(reverse("login"))
     
     return render(request, 'signup.html')
+
